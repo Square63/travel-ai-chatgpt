@@ -20,7 +20,7 @@
     <%= form_with url: generate_plan_path, method: :post do |form| %>
       <div class="row">
         <div class="col-8 mx-auto">
-          <div class="grey-box my-4">
+          <div class="grey-box my-4" data-controller="duplicate-form-field">
             <div id="parent-container">
               <div  id="original" class="select-grid">
                 <div class="mb-3">
@@ -35,7 +35,7 @@
               </div>
             </div>
             <div class="add-more">
-              <a class="d-flex align-items-center" href="javascript:void(0)">
+              <a class="d-flex align-items-center" href="javascript:void(0)" data-action="click->duplicate-form-field#clone">
                 <span class="material-symbols-outlined me-2">
                   add_circle
                 </span>
