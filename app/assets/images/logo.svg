@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="218px" height="45px" viewBox="0 0 218 45" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Group 2</title>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Medium" transform="translate(-182.000000, -12.000000)">
+            <rect fill="#FFFFFF" x="0" y="0" width="1440" height="1431"></rect>
+            <rect id="Rectangle" stroke="#D6D6D6" fill="#FAFAFA" x="0" y="0" width="1440" height="69"></rect>
+            <g id="Group-2" transform="translate(182.000000, 12.000000)">
+                <g id="Group">
+                    <rect id="Rectangle" fill="#FE666D" x="0" y="0" width="45" height="45" rx="22.5"></rect>
+                    <g id="flight_FILL0_wght400_GRAD0_opsz48" transform="translate(29.292453, 16.556604) rotate(46.000000) translate(-29.292453, -16.556604) translate(17.830189, 5.094340)" fill="#FFFFFF" fill-rule="nonzero">
+                        <path d="M7.7370283,22.9245283 L7.7370283,21.7209906 L10.0294811,20.0016509 L10.0294811,12.8090802 L2.84217094e-14,15.7606132 L2.84217094e-14,14.0985849 L10.0294811,8.19551887 L10.0294811,1.43278302 C10.0294811,1.03160377 10.1679835,0.692511792 10.4449882,0.415507075 C10.7219929,0.138502358 11.0610849,0 11.4622642,0 C11.8634434,0 12.2025354,0.138502358 12.4795401,0.415507075 C12.7565448,0.692511792 12.8950472,1.03160377 12.8950472,1.43278302 L12.8950472,8.19551887 L22.9245283,14.0985849 L22.9245283,15.7606132 L12.8950472,12.8090802 L12.8950472,20.0016509 L15.1875,21.7209906 L15.1875,22.9245283 L11.4622642,21.8642689 L7.7370283,22.9245283 Z" id="Path"></path>
+                    </g>
+                </g>
+                <text id="Travel-AI-Planner" font-family="KeepCalm-Medium, Keep Calm" font-size="18" font-weight="normal" fill="#000000">
+                    <tspan x="55" y="29">Travel AI Planner</tspan>
+                </text>
+            </g>
+        </g>
+    </g>
+</svg>

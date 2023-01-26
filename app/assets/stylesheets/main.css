@@ -1,0 +1,132 @@
+:root {
+	 --header-bg: #fafafa;
+	 --header-brdr: #d6d6d6;
+	 --primary: #fe666d;
+	 --primary-hover: #ff4b54;
+	 --body-clr: #000;
+	 --grey-box: #ebebeb;
+	 --input-brdr: #dadada;
+	 --dark-grey: #454545;
+	 --mute-clr: #c6c6c6;
+}
+ html, body {
+	 height: 100%;
+}
+ body {
+	 font-family: 'Roboto', sans-serif;
+	 font-size: 16px;
+	 color: var(--body-clr);
+}
+ h1 {
+	 font-size: 3rem;
+	 font-weight: bold;
+}
+ h1 span {
+	 color: var(--primary);
+}
+ h2 {
+	 font-size: 2.125rem;
+}
+ .subheading {
+	 font-size: 1.25rem;
+	 line-height: 1.5625rem;
+	 font-weight: 100;
+}
+ .btn-primary {
+	 background-color: var(--primary);
+	 border-color: var(--primary);
+	 font-size: 1.375rem;
+	 font-weight: 400;
+	 padding: 0.75rem 2rem;
+}
+ .btn-primary:hover {
+	 background-color: var(--primary-hover);
+	 border-color: var(--primary-hover);
+}
+ nav.navbar {
+	 padding: 0.6875rem 0;
+	 background: var(--header-bg);
+	 border: 1px solid var(--header-brdr);
+}
+ .grey-box {
+	 background: rgba(215, 215, 215, 0.10);
+	 border: 1px solid var(--grey-box);
+	 border-radius: 0.625rem;
+	 padding: 1.875rem 2.0625rem;
+}
+ .grey-box .form-control, .grey-box .form-select {
+	 background: #fff;
+	 border: 1px solid var(--input-brdr);
+	 border-radius: 8px;
+	 height: 71px;
+	 font-size: 1.125rem;
+	 font-weight: 100;
+}
+ .grey-box .select-grid {
+	 display: grid;
+	 grid-template-columns: 1fr 190px;
+	 grid-gap: 20px;
+}
+ .grey-box .select-list {
+	 position: relative;
+}
+ .grey-box .select-list span {
+	 position: absolute;
+	 top: 42%;
+	 left: calc(100% - 50px);
+	 transform: translateY(-50%);
+	 font-size: 40px;
+	 color: var(--primary);
+}
+ .add-more a {
+	 font-size: 0.875rem;
+	 font-weight: 400;
+	 text-decoration: none;
+	 color: var(--body-clr);
+}
+ .add-more a span {
+	 color: var(--primary);
+}
+ .activity-section h5 {
+	 font-size: 1rem;
+}
+ .activity-section .checkbox-grid {
+	 display: grid;
+	 grid-template-columns: repeat(5, minmax(0, 1fr));
+	 grid-gap: 15px;
+}
+ .activity-section .checkbox-grid .pretty {
+	 line-height: 1.0625rem;
+}
+ .activity-section .checkbox-grid .pretty.p-curve .state label::before, .activity-section .checkbox-grid .pretty.p-curve .state label::after {
+	 border-radius: 0;
+}
+ .activity-section .checkbox-grid .pretty.p-svg .state .svg {
+	 width: calc(1em + 6px);
+	 height: calc(1em + 6px);
+}
+ .activity-section .checkbox-grid .pretty .state label {
+	 font-weight: 100;
+	 font-size: 1rem;
+	 padding-left: 8px;
+}
+ .activity-section .checkbox-grid .pretty .state label::before, .activity-section .checkbox-grid .pretty .state label::after {
+	 width: calc(1em + 6px);
+	 height: calc(1em + 6px);
+	 border-color: var(--grey-box);
+}
+ .activity-section .checkbox-grid .pretty input:checked ~ .state.p-success label::after {
+	 background-color: var(--primary) !important;
+}
+ .about-section .about-grid {
+	 font-weight: 100;
+	 display: grid;
+	 grid-template-columns: repeat(2, minmax(0, 1fr));
+	 grid-gap: 20px 45px;
+}
+ footer {
+	 background-color: var(--dark-grey);
+	 font-size: 11px;
+	 font-weight: 100;
+	 color: var(--mute-clr);
+}

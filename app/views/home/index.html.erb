@@ -1,0 +1,210 @@
+<nav class="navbar">
+  <div class="container">
+    <a class="navbar-brand p-0" href="#">
+      <%= image_tag "logo.svg" %>
+    </a>
+  </div>
+</nav>
+
+<div class="main-content">
+  <div class="container">
+    <div class="row">
+      <div class="col-8 mx-auto">
+        <h1 class="text-center mt-5 pt-3">Welcom to <span>Travel AI</span> Planner.</h1>
+        <div class="subheading text-center">
+          Your one-stop solution for all your travel planning needs. We are an artificial intelligence-powered platform that helps you create personalized travel itineraries for your next vacation.
+        </div>
+      </div>
+    </div>
+
+    <%= form_with url: generate_plan_path, method: :post do |form| %>
+      <div class="row">
+        <div class="col-8 mx-auto">
+          <div class="grey-box my-4">
+            <div id="parent-container">
+              <div  id="original" class="select-grid">
+                <div class="mb-3">
+                  <%= form.text_field :destination, class: "form-control", placeholder:"Enter destination (Country, Region or City )" %>
+                </div>
+                <div class="select-list">
+                  <%= form.select :days, (1..10).to_a, {:prompt => 'Days'}, class:"form-select mb-3" %>
+                  <span class="material-symbols-outlined">
+                    expand_more
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="add-more">
+              <a class="d-flex align-items-center" href="javascript:void(0)">
+                <span class="material-symbols-outlined me-2">
+                  add_circle
+                </span>
+                Add another destination
+              </a>
+            </div>
+          </div>
+
+          <div class="grey-box my-4">
+            <div class="select-grid">
+              <div class="select-list">
+                <%= form.select :pace, ["Fast", "Medium", "Slow"], {:prompt => 'Select Pace'}, class:"form-select mb-3" %>
+                <span class="material-symbols-outlined">
+                  expand_more
+                </span>
+              </div>
+            </div>
+            <div class="activity-section">
+              <h5 class="my-3">Activity</h5>
+
+              <div class="checkbox-grid">
+                <div>
+                  <div class="pretty p-svg p-curve">
+                    <input type="checkbox" name="activities[]" value="Culture" />
+                    <div class="state p-success">
+                      <svg class="svg svg-icon" viewBox="0 0 20 20">
+                          <path d="M7.629,14.566c0.125,0.125,0.291,0.188,0.456,0.188c0.164,0,0.329-0.062,0.456-0.188l8.219-8.221c0.252-0.252,0.252-0.659,0-0.911c-0.252-0.252-0.659-0.252-0.911,0l-7.764,7.763L4.152,9.267c-0.252-0.251-0.66-0.251-0.911,0c-0.252,0.252-0.252,0.66,0,0.911L7.629,14.566z" style="stroke: white;fill:white;"></path>
+                      </svg>
+                      <label>Culture</label>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div class="pretty p-svg p-curve">
+                    <input type="checkbox" name="activities[]" value="Outdoor" />
+                    <div class="state p-success">
+                      <svg class="svg svg-icon" viewBox="0 0 20 20">
+                          <path d="M7.629,14.566c0.125,0.125,0.291,0.188,0.456,0.188c0.164,0,0.329-0.062,0.456-0.188l8.219-8.221c0.252-0.252,0.252-0.659,0-0.911c-0.252-0.252-0.659-0.252-0.911,0l-7.764,7.763L4.152,9.267c-0.252-0.251-0.66-0.251-0.911,0c-0.252,0.252-0.252,0.66,0,0.911L7.629,14.566z" style="stroke: white;fill:white;"></path>
+                      </svg>
+                      <label>Outdoor</label>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div class="pretty p-svg p-curve">
+                    <input type="checkbox" name="activities[]" value="Relaxing" />
+                    <div class="state p-success">
+                      <svg class="svg svg-icon" viewBox="0 0 20 20">
+                          <path d="M7.629,14.566c0.125,0.125,0.291,0.188,0.456,0.188c0.164,0,0.329-0.062,0.456-0.188l8.219-8.221c0.252-0.252,0.252-0.659,0-0.911c-0.252-0.252-0.659-0.252-0.911,0l-7.764,7.763L4.152,9.267c-0.252-0.251-0.66-0.251-0.911,0c-0.252,0.252-0.252,0.66,0,0.911L7.629,14.566z" style="stroke: white;fill:white;"></path>
+                      </svg>
+                      <label>Relaxing</label>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div class="pretty p-svg p-curve">
+                    <input type="checkbox" name="activities[]" value="Romantic" />
+                    <div class="state p-success">
+                      <svg class="svg svg-icon" viewBox="0 0 20 20">
+                          <path d="M7.629,14.566c0.125,0.125,0.291,0.188,0.456,0.188c0.164,0,0.329-0.062,0.456-0.188l8.219-8.221c0.252-0.252,0.252-0.659,0-0.911c-0.252-0.252-0.659-0.252-0.911,0l-7.764,7.763L4.152,9.267c-0.252-0.251-0.66-0.251-0.911,0c-0.252,0.252-0.252,0.66,0,0.911L7.629,14.566z" style="stroke: white;fill:white;"></path>
+                      </svg>
+                      <label>Romantic</label>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div class="pretty p-svg p-curve">
+                    <input type="checkbox" name="activities[]" value="Beaches" />
+                    <div class="state p-success">
+                      <svg class="svg svg-icon" viewBox="0 0 20 20">
+                          <path d="M7.629,14.566c0.125,0.125,0.291,0.188,0.456,0.188c0.164,0,0.329-0.062,0.456-0.188l8.219-8.221c0.252-0.252,0.252-0.659,0-0.911c-0.252-0.252-0.659-0.252-0.911,0l-7.764,7.763L4.152,9.267c-0.252-0.251-0.66-0.251-0.911,0c-0.252,0.252-0.252,0.66,0,0.911L7.629,14.566z" style="stroke: white;fill:white;"></path>
+                      </svg>
+                      <label>Beaches</label>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div class="pretty p-svg p-curve">
+                    <input type="checkbox" name="activities[]" value="Historic" />
+                    <div class="state p-success">
+                      <svg class="svg svg-icon" viewBox="0 0 20 20">
+                          <path d="M7.629,14.566c0.125,0.125,0.291,0.188,0.456,0.188c0.164,0,0.329-0.062,0.456-0.188l8.219-8.221c0.252-0.252,0.252-0.659,0-0.911c-0.252-0.252-0.659-0.252-0.911,0l-7.764,7.763L4.152,9.267c-0.252-0.251-0.66-0.251-0.911,0c-0.252,0.252-0.252,0.66,0,0.911L7.629,14.566z" style="stroke: white;fill:white;"></path>
+                      </svg>
+                      <label>Historic</label>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div class="pretty p-svg p-curve">
+                    <input type="checkbox" name="activities[]" value="Museums" />
+                    <div class="state p-success">
+                      <svg class="svg svg-icon" viewBox="0 0 20 20">
+                          <path d="M7.629,14.566c0.125,0.125,0.291,0.188,0.456,0.188c0.164,0,0.329-0.062,0.456-0.188l8.219-8.221c0.252-0.252,0.252-0.659,0-0.911c-0.252-0.252-0.659-0.252-0.911,0l-7.764,7.763L4.152,9.267c-0.252-0.251-0.66-0.251-0.911,0c-0.252,0.252-0.252,0.66,0,0.911L7.629,14.566z" style="stroke: white;fill:white;"></path>
+                      </svg>
+                      <label>Museums</label>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div class="pretty p-svg p-curve">
+                    <input type="checkbox" name="activities[]" value="Shopping" />
+                    <div class="state p-success">
+                      <svg class="svg svg-icon" viewBox="0 0 20 20">
+                          <path d="M7.629,14.566c0.125,0.125,0.291,0.188,0.456,0.188c0.164,0,0.329-0.062,0.456-0.188l8.219-8.221c0.252-0.252,0.252-0.659,0-0.911c-0.252-0.252-0.659-0.252-0.911,0l-7.764,7.763L4.152,9.267c-0.252-0.251-0.66-0.251-0.911,0c-0.252,0.252-0.252,0.66,0,0.911L7.629,14.566z" style="stroke: white;fill:white;"></path>
+                      </svg>
+                      <label>Shopping</label>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div class="pretty p-svg p-curve">
+                    <input type="checkbox" name="activities[]" value="Night Life" />
+                    <div class="state p-success">
+                      <svg class="svg svg-icon" viewBox="0 0 20 20">
+                          <path d="M7.629,14.566c0.125,0.125,0.291,0.188,0.456,0.188c0.164,0,0.329-0.062,0.456-0.188l8.219-8.221c0.252-0.252,0.252-0.659,0-0.911c-0.252-0.252-0.659-0.252-0.911,0l-7.764,7.763L4.152,9.267c-0.252-0.251-0.66-0.251-0.911,0c-0.252,0.252-0.252,0.66,0,0.911L7.629,14.566z" style="stroke: white;fill:white;"></path>
+                      </svg>
+                      <label>Night Life</label>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div class="pretty p-svg p-curve">
+                    <input type="checkbox" name="activities[]" value="Wildlife" />
+                    <div class="state p-success">
+                      <svg class="svg svg-icon" viewBox="0 0 20 20">
+                          <path d="M7.629,14.566c0.125,0.125,0.291,0.188,0.456,0.188c0.164,0,0.329-0.062,0.456-0.188l8.219-8.221c0.252-0.252,0.252-0.659,0-0.911c-0.252-0.252-0.659-0.252-0.911,0l-7.764,7.763L4.152,9.267c-0.252-0.251-0.66-0.251-0.911,0c-0.252,0.252-0.252,0.66,0,0.911L7.629,14.566z" style="stroke: white;fill:white;"></path>
+                      </svg>
+                      <label>Wildlife</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="d-flex justify-content-end">
+            <%= form.submit "See your Trip", class:"btn btn-primary" %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+
+    <div class="about-section mt-5">
+      <h2>About Us</h2>
+      <div class="about-grid pb-5">
+        <div>
+          Our AI algorithm takes into account your preferences, budget, and time constraints to come up with the perfect itinerary for you. Whether you're planning a solo trip, a family vacation, or a romantic getaway, we have you covered.
+        </div>
+        <div>
+          With our platform, you can easily plan your trip to any destination in the world. From popular tourist hotspots to hidden gems, we have all the information you need to make your trip a success.
+        </div>
+        <div>
+          Our platform is user-friendly and easy to navigate. Simply input your travel dates, budget, and preferences, and our AI algorithm will generate a customized itinerary for you. You can also make adjustments and changes to the itinerary as per your needs.
+        </div>
+        <div>
+          We also offer a wide range of travel-related services, including flight and hotel booking, visa assistance, and travel insurance. Our platform is designed to make your travel planning process as smooth and stress-free as possible.
+        </div>
+        <div>
+          So why wait? Start planning your next vacation with [Travel AI Iterinary Planner] today! We guarantee that you will have an unforgettable trip with our AI-powered itinerary planning.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+
+<script>
+  console.log($(div).length);
+
+</script>
