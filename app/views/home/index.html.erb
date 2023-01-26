@@ -24,10 +24,10 @@
             <div id="parent-container">
               <div  id="original" class="select-grid">
                 <div class="mb-3">
-                  <%= form.text_field :destination, class: "form-control", placeholder:"Enter destination (Country, Region or City )" %>
+                  <%= form.text_field :destination, name:"locations[][destination]", class: "form-control", placeholder:"Enter destination (Country, Region or City )" %>
                 </div>
                 <div class="select-list">
-                  <%= form.select :days, (1..10).to_a, {:prompt => 'Days'}, class:"form-select mb-3" %>
+                  <%= form.select :days, (1..10).to_a, {:prompt => 'Days'}, class:"form-select mb-3", name: "locations[][days]" %>
                   <span class="material-symbols-outlined">
                     expand_more
                   </span>
