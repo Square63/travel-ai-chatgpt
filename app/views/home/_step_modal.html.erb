@@ -1,0 +1,17 @@
+<div class="modal-header">
+  <h5 class="modal-title" id="modalTitleId">Day <%= @point %></h5>
+    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+</div>
+<div class="modal-body">
+  <div class="row">
+    <div class="col-11 mx-auto">
+      <div class="plan-list">
+        <ul>
+          <% @steps.each do |step| %>
+            <li class="pb-3"><%= step %></li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,12 +1,5 @@
 
-<div class="off-canvas-container">
-  <nav class="navbar">
-    <div class="container">
-      <a class="navbar-brand p-0" href="#">
-        <%= image_tag "logo.svg" %>
-      </a>
-    </div>
-  </nav>
+<%= render 'layouts/navbar' %>
 
   <div class="main-content">
     <div class="container">
@@ -15,119 +8,29 @@
       <div class="row">
         <div class="col-11 mx-auto pt-5">
           <div class="plan-list">
-            <ul class="mb-5">
-              <h5 class="mb-3">
-                <a data-bs-toggle="modal" data-bs-target="#modalId">Day 1:</a>
-              </h5>
-              <li>Arive in Istanbul, Turkey.</li>
-              <li>Check into hotel and rest for the remainder of the day.</li>
-            </ul>
 
-            <ul class="mb-5">
-              <h5 class="mb-3">
-                <a href="#">Day 2:</a>
-              </h5>
-              <li>Arive in Istanbul, Turkey.</li>
-              <li>Check into hotel and rest for the remainder of the day.</li>
-            </ul>
-
-            <ul class="mb-5">
-              <h5 class="mb-3">
-                <a href="#">Day 3:</a>
-              </h5>
-              <li>Arive in Istanbul, Turkey.</li>
-              <li>Check into hotel and rest for the remainder of the day.</li>
-            </ul>
-
-            <ul class="mb-5">
-              <h5 class="mb-3">
-                <a href="#">Day 4:</a>
-              </h5>
-              <li>Arive in Istanbul, Turkey.</li>
-              <li>Check into hotel and rest for the remainder of the day.</li>
-            </ul>
-
-            <ul class="mb-5">
-              <h5 class="mb-3">
-                <a href="#">Day 5:</a>
-              </h5>
-              <li>Arive in Istanbul, Turkey.</li>
-              <li>Check into hotel and rest for the remainder of the day.</li>
-            </ul>
-
-            <ul class="mb-5">
-              <h5 class="mb-3">
-                <a href="#">Day 6:</a>
-              </h5>
-              <li>Arive in Istanbul, Turkey.</li>
-              <li>Check into hotel and rest for the remainder of the day.</li>
-            </ul>
-
-            <ul class="mb-5">
-              <h5 class="mb-3">
-                <a href="#">Day 7:</a>
-              </h5>
-              <li>Arive in Istanbul, Turkey.</li>
-              <li>Check into hotel and rest for the remainder of the day.</li>
-            </ul>
+            <% @steps.each_with_index do |step, i| %>
+              <%= content_tag :div, "javascript:void(0);", class: "dayDetail", data: {path: explain_point_path(prompt: @response, point: i + 1)} do %>
+                 <%= content_tag :h5, "Day #{i+1}" %>
+                  <ul class="mb-5">
+                    <li><%= step %></li>
+                  </ul>
+              <% end %>
+            <% end %>
           </div>
         </div>
       </div>
     </div>
   </div>
-
-  <footer class="py-3 d-flex justify-content-center">
-    All Rights Reserved
-  </footer>
 </div>
 
-<div class="modal fade" id="modalId" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" role="dialog" aria-labelledby="modalTitleId" aria-hidden="true">
+<div id="modal-loader-spinner" class="loader-spinner d-none">
+  <div class="spinner"></div>
+</div>
+
+<div class="modal fade" id="modal-window" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" role="dialog" aria-labelledby="modalTitleId" aria-hidden="true">
   <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="modalTitleId">Day 1</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <div class="row">
-          <div class="col-11 mx-auto">
-            <div class="plan-list">
-              <ul>
-                <li class="pb-3">
-                  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy
-                  text ever since the 1500s,
-                </li>
-                <li class="pb-3">
-                  industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type
-                  and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining
-                  essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more
-                  recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </li>
-                <li class="pb-3">
-                  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy
-                  text ever since the 1500s,
-                </li>
-                <li class="pb-3">
-                  industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type
-                  and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining
-                  essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more
-                  recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </li>
-                <li class="pb-3">
-                  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy
-                  text ever since the 1500s,
-                </li>
-                <li class="pb-3">
-                  industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type
-                  and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining
-                  essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more
-                  recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
+    <div class="modal-content" id="modal-content">
     </div>
   </div>
 </div>

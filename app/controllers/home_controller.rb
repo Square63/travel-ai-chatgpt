@@ -1,4 +1,5 @@
 class HomeController < ApplicationController
+  protect_from_forgery except: :explain_point
   before_action :permit_params, only: [:generate_plan]
 
   def index; end
@@ -8,23 +9,22 @@ class HomeController < ApplicationController
     activities = params[:activities]
     pace = params[:pace]
 
-    steps, prompt = FetchDataService.new.get_plan(locations, activities, pace)
+    @response = FetchDataService.new.get_plan(locations, activities, pace)
 
-    puts "\n\n\n#{steps}"
-
-    redirect_to show_path(steps: steps, prompt: prompt)
+    @steps = @response.split(/\n\nDay ([0-9]+):/).reject {|x| x.blank? || x.match?(/\d/)}
+    puts @steps
+    render :show
   end
 
   def show
-    @steps = params[:steps]
-    @prompt = params[:prompt]
+    @steps = []
   end
 
   def explain_point
     @response = FetchDataService.new.explain_point(params[:prompt], params[:point])
-    respond_to do |format|
-      format.turbo_stream {  }
-    end
+    puts "\n\n#{@response}"
+    @point = params[:point]
+    @steps = @response.split(/\n\n/)
   end
 
   private

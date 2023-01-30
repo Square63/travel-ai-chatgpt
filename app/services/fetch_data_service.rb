@@ -3,12 +3,12 @@ class FetchDataService
     prompt = "Write me a detailed travel iterinary to travel to #{list_destinations(locations)} with #{days_per_destination(locations)}." + (pace.present? ? "The trip should be #{pace} paced " : "") + ( activities.present? ? "and include activities related to #{activities.join(" and ")}." : "")
 
     response = Openai.fetch_response(prompt)
-    [response, prompt]
+    response
   end
 
   def explain_point(prompt, point)
-    prompt = prompt + "Explain me Day #{point} in more detail."
-    response = Openai.fetch_response(prompt)
+    new_prompt = prompt + "Explain me Day #{point} in more detail."
+    response = Openai.fetch_response(new_prompt)
   end
 
   def list_destinations(locations)
